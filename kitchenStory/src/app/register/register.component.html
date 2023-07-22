@@ -1,8 +1,8 @@
 <p>register works!</p>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" ngNativeValidate >
     <label>Enter Name:</label>
-    <input type="text" name="username" [(ngModel)]="user.username"><br>
+    <input type="text" name="username" [(ngModel)]="user.username" required><br>
     <label>Enter your password</label>
-    <input type="password" name="password" [(ngModel)]="user.password" ><br>
+    <input type="password" name="password" [(ngModel)]="user.password" required ><br>
     <input type="Submit">
     </form>

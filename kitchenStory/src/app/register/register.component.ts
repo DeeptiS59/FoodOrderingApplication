@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,10 +8,11 @@ import { LoginService } from '../login.service';
 })
 export class RegisterComponent {
   user:any={};
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
   onSubmit() {
     this.loginService.registerUser(this.user).subscribe((res: any[]) => {
-      alert("done")
+      alert("You have been registered!")
+      this.router.navigate(["/login"])
    });
   }
 }
