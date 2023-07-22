@@ -1,0 +1,9 @@
+<p>add-food-item works!</p>
+<form (ngSubmit)="onSubmit()">
+<label>Add new food item:</label>
+<input type="text" value="Add food item here" [(ngModel)]="foodItem.name" name="name"><br>
+<label>Price:</label>
+<input type="number" value="000" [(ngModel)]="foodItem.price" name="price"><br>
+<input type="Submit">
+<input type="reset">
+</form>

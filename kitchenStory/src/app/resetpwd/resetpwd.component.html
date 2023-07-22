@@ -1,0 +1,8 @@
+<p>resetpwd works!</p>
+<form (ngSubmit)="resetpwd()">
+    <label>Enter your old password</label>
+    <input type="password" name="pwd" [(ngModel)]="resetpwd1.oldPassword"><br>
+    <label> Enter new password</label>
+    <input type="password" name="pwd2" [(ngModel)]="resetpwd1.newPassword"><br>
+    <input type="Submit" value="Reset Password">
+</form>

@@ -1,0 +1,21 @@
+<label>Search Dishes: </label>
+<input type="search" name="searchItem" (change)="onSearch($event)" ><hr>
+<button class="btn btn-primary btn-lg" routerLink="/cart">Go to Cart</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of displayedFoodlist; let i = index;">
+           
+            <td>{{item.name}} </td> 
+            <td>{{item.price}}</td>
+            <td><button class="btn btn-success btn-lg" (click)="addToCart(item.id)" >Add to Cart</button></td>
+            </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary btn-lg" routerLink="/logout">Logout</button>
