@@ -10,9 +10,13 @@ export class RegisterComponent {
   user:any={};
   constructor(private loginService: LoginService, private router: Router) { }
   onSubmit() {
-    this.loginService.registerUser(this.user).subscribe((res: any[]) => {
+    this.loginService.registerUser(this.user).subscribe({
+      error:(res:any) => {
+        alert("Could not create user. Duplicate Username")
+      },
+      next:(res: any[]) => {
       alert("You have been registered!")
       this.router.navigate(["/login"])
-   });
+   }});
   }
 }
